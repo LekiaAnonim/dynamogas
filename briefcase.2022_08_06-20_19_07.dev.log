@@ -1,0 +1,172 @@
+Date/Time:       2022-08-06 20:19:08 
+Command line:    /Users/gospellekia/DynamoGas/venv/bin/briefcase dev
+
+OS Release:      Darwin 21.3.0
+OS Version:      Darwin Kernel Version 21.3.0: Wed Jan  5 21:37:58 PST 2022; root:xnu-8019.80.24~20/RELEASE_X86_64
+Architecture:    x86_64
+Platform:        macOS-10.16-x86_64-i386-64bit
+
+Python exe:      /Users/gospellekia/DynamoGas/venv/bin/python3
+Python version:  3.9.9 (main, Dec  3 2021, 10:42:08)  [Clang 10.0.1 (clang-1001.0.46.4)]
+Virtual env:     True
+Conda env:       False
+
+Briefcase:       0.3.8
+Target platform: macOS
+Target format:   None
+
+Environment Variables:
+    GOPATH=/Users/gospellekia/go
+    HOME=/Users/gospellekia
+    JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home
+    LC_CTYPE=UTF-8
+    LESS=-R
+    LOGNAME=gospellekia
+    LSCOLORS=Gxfxcxdxbxegedabagacad
+    OLDPWD=/Users/gospellekia/DynamoGas
+    PAGER=less
+    PATH=/Users/gospellekia/DynamoGas/venv/bin:/Users/gospellekia/go/bin:~/.composer/vendor/bin:/usr/local/opt/php@7.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin
+    PS1=(venv) %(?:%{[01;32m%}➜ :%{[01;31m%}➜ ) %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)
+    PWD=/Users/gospellekia/DynamoGas/dynamosgas
+    SHELL=/bin/zsh
+    SHLVL=1
+    SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.1Elhg8upVo/Listeners
+    TERM=xterm-256color
+    TERM_PROGRAM=Apple_Terminal
+    TERM_PROGRAM_VERSION=443
+    TERM_SESSION_ID=C4AD8D33-B403-4CC3-B96A-7B1CC0393E5E
+    TMPDIR=/var/folders/dw/kqg8_h6565lgym0qq9s2dn3r0000gn/T/
+    USER=gospellekia
+    VIRTUAL_ENV=/Users/gospellekia/DynamoGas/venv
+    XPC_FLAGS=0x0
+    XPC_SERVICE_NAME=0
+    ZSH=/Users/gospellekia/.oh-my-zsh
+    _=/Users/gospellekia/DynamoGas/venv/bin/briefcase
+    __CFBundleIdentifier=com.apple.Terminal
+    __CF_USER_TEXT_ENCODING=0x1F5:0x0:0x0
+
+Briefcase Log:
+[20:19:06]                                                                                                                                                                dev.py:147
+           [dynamosgas] Starting in dev mode...                                                                                                                           dev.py:147
+                                                                                                                                                                   subprocess.py:433
+           >>> Running Command:                                                                                                                                    subprocess.py:434
+           >>>     /Users/gospellekia/DynamoGas/venv/bin/python3 -m dynamosgas                                                                                     subprocess.py:435
+           >>> Environment Overrides:                                                                                                                              subprocess.py:446
+           >>>     PYTHONPATH=src                                                                                                                                  subprocess.py:448
+[20:19:07] >>> Return code: 1                                                                                                                                      subprocess.py:464
+                                                                                                                                                                      __main__.py:21
+           Unable to start application 'dynamosgas'                                                                                                                   __main__.py:22
+
+╭─────────────────────────────────────────────────────────────────────── Traceback (most recent call last) ────────────────────────────────────────────────────────────────────────╮
+│ /Users/gospellekia/DynamoGas/venv/lib/python3.9/site-packages/briefcase/commands/dev.py:88 in run_dev_app                                                                        │
+│                                                                                                                                                                                  │
+│    85 │   │   """                                                                             ╭────────────────────────────── locals ───────────────────────────────╮            │
+│    86 │   │   try:                                                                            │     app = <com.dynamogroup.dynamosgas v0.0.1 AppConfig>             │            │
+│    87 │   │   │   # Invoke the app.                                                           │     env = {'PYTHONPATH': 'src'}                                     │            │
+│ ❱  88 │   │   │   self.subprocess.run(                                                        │ options = {}                                                        │            │
+│    89 │   │   │   │   [sys.executable, "-m", app.module_name],                                │    self = <briefcase.commands.dev.DevCommand object at 0x105492be0> │            │
+│    90 │   │   │   │   env=env,                                                                ╰─────────────────────────────────────────────────────────────────────╯            │
+│    91 │   │   │   │   check=True,                                                                                                                                                │
+│                                                                                                                                                                                  │
+│ /Users/gospellekia/DynamoGas/venv/lib/python3.9/site-packages/briefcase/integrations/subprocess.py:223 in run                                                                    │
+│                                                                                                                                                                                  │
+│   220 │   │   self._log_environment(kwargs.get("env"))                                                                                                                           │
+│   221 │   │                                                                                                                                                                      │
+│   222 │   │   try:                                                                                                                                                               │
+│ ❱ 223 │   │   │   command_result = self._subprocess.run(                                                                                                                         │
+│   224 │   │   │   │   [str(arg) for arg in args], **self.final_kwargs(**kwargs)                                                                                                  │
+│   225 │   │   │   )                                                                                                                                                              │
+│   226 │   │   except subprocess.CalledProcessError as e:                                                                                                                         │
+│                                                                                                                                                                                  │
+│ ╭─────────────────────────────────────────── locals ───────────────────────────────────────────╮                                                                                 │
+│ │                 args = ['/Users/gospellekia/DynamoGas/venv/bin/python3', '-m', 'dynamosgas'] │                                                                                 │
+│ │ is_output_redirected = None                                                                  │                                                                                 │
+│ │               kwargs = {'env': {'PYTHONPATH': 'src'}, 'check': True}                         │                                                                                 │
+│ │                 self = <briefcase.integrations.subprocess.Subprocess object at 0x1071a8d30>  │                                                                                 │
+│ │        stream_output = False                                                                 │                                                                                 │
+│ ╰──────────────────────────────────────────────────────────────────────────────────────────────╯                                                                                 │
+│                                                                                                                                                                                  │
+│ /usr/local/Cellar/python@3.9/3.9.9/Frameworks/Python.framework/Versions/3.9/lib/python3.9/subprocess.py:528 in run                                                               │
+│                                                                                                                                                                                  │
+│    525 │   │   │   raise                                                                                                                                                         │
+│    526 │   │   retcode = process.poll()                                                                                                                                          │
+│    527 │   │   if check and retcode:                                                                                                                                             │
+│ ❱  528 │   │   │   raise CalledProcessError(retcode, process.args,                                                                                                               │
+│    529 │   │   │   │   │   │   │   │   │    output=stdout, stderr=stderr)                                                                                                        │
+│    530 │   return CompletedProcess(process.args, retcode, stdout, stderr)                                                                                                        │
+│    531                                                                                                                                                                           │
+│                                                                                                                                                                                  │
+│ ╭───────────────────────────────────────────── locals ──────────────────────────────────────────────╮                                                                            │
+│ │ capture_output = False                                                                            │                                                                            │
+│ │          check = True                                                                             │                                                                            │
+│ │          input = None                                                                             │                                                                            │
+│ │         kwargs = {                                                                                │                                                                            │
+│ │                  │   'env': {                                                                     │                                                                            │
+│ │                  │   │   'TMPDIR': '/var/folders/dw/kqg8_h6565lgym0qq9s2dn3r0000gn/T/',           │                                                                            │
+│ │                  │   │   '__CFBundleIdentifier': 'com.apple.Terminal',                            │                                                                            │
+│ │                  │   │   'XPC_FLAGS': '0x0',                                                      │                                                                            │
+│ │                  │   │   'TERM': 'xterm-256color',                                                │                                                                            │
+│ │                  │   │   'SSH_AUTH_SOCK': '/private/tmp/com.apple.launchd.1Elhg8upVo/Listeners',  │                                                                            │
+│ │                  │   │   'XPC_SERVICE_NAME': '0',                                                 │                                                                            │
+│ │                  │   │   'TERM_PROGRAM': 'Apple_Terminal',                                        │                                                                            │
+│ │                  │   │   'TERM_PROGRAM_VERSION': '443',                                           │                                                                            │
+│ │                  │   │   'TERM_SESSION_ID': 'C4AD8D33-B403-4CC3-B96A-7B1CC0393E5E',               │                                                                            │
+│ │                  │   │   'SHELL': '/bin/zsh',                                                     │                                                                            │
+│ │                  │   │   ... +19                                                                  │                                                                            │
+│ │                  │   },                                                                           │                                                                            │
+│ │                  │   'text': True,                                                                │                                                                            │
+│ │                  │   'encoding': 'UTF-8'                                                          │                                                                            │
+│ │                  }                                                                                │                                                                            │
+│ │      popenargs = (['/Users/gospellekia/DynamoGas/venv/bin/python3', '-m', 'dynamosgas'],)         │                                                                            │
+│ │        process = <Popen: returncode: 1 args: ['/Users/gospellekia/DynamoGas/venv/bin/python3'...> │                                                                            │
+│ │        retcode = 1                                                                                │                                                                            │
+│ │         stderr = None                                                                             │                                                                            │
+│ │         stdout = None                                                                             │                                                                            │
+│ │        timeout = None                                                                             │                                                                            │
+│ ╰───────────────────────────────────────────────────────────────────────────────────────────────────╯                                                                            │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+CalledProcessError: Command '['/Users/gospellekia/DynamoGas/venv/bin/python3', '-m', 'dynamosgas']' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+╭─────────────────────────────────────────────────────────────────────── Traceback (most recent call last) ────────────────────────────────────────────────────────────────────────╮
+│ /Users/gospellekia/DynamoGas/venv/lib/python3.9/site-packages/briefcase/__main__.py:14 in main                                                                                   │
+│                                                                                                                                                                                  │
+│   11 │   try:                                                                                ╭────────────────────────────────── locals ───────────────────────────────────╮     │
+│   12 │   │   command, options = parse_cmdline(sys.argv[1:])                                  │ command = <briefcase.commands.dev.DevCommand object at 0x105492be0>         │     │
+│   13 │   │   command.parse_config("pyproject.toml")                                          │       e = BriefcaseCommandError("Unable to start application 'dynamosgas'") │     │
+│ ❱ 14 │   │   command(**options)                                                              │     log = <briefcase.console.Log object at 0x105492b50>                     │     │
+│   15 │   │   result = 0                                                                      │ options = {'appname': None, 'update_dependencies': False, 'run_app': True}  │     │
+│   16 │   except HelpText as e:                                                               │  result = 200                                                               │     │
+│   17 │   │   log.info()                                                                      ╰─────────────────────────────────────────────────────────────────────────────╯     │
+│                                                                                                                                                                                  │
+│ /Users/gospellekia/DynamoGas/venv/lib/python3.9/site-packages/briefcase/commands/dev.py:149 in __call__                                                                          │
+│                                                                                                                                                                                  │
+│   146 │   │   if run_app:                                                                                                                                                        │
+│   147 │   │   │   self.logger.info("Starting in dev mode...", prefix=app.app_name)                                                                                               │
+│   148 │   │   │   env = self.get_environment(app)                                                                                                                                │
+│ ❱ 149 │   │   │   return self.run_dev_app(app, env, **options)                                                                                                                   │
+│   150                                                                                                                                                                            │
+│                                                                                                                                                                                  │
+│ ╭────────────────────────────────────────────── locals ───────────────────────────────────────────────╮                                                                          │
+│ │                 app = <com.dynamogroup.dynamosgas v0.0.1 AppConfig>                                 │                                                                          │
+│ │             appname = None                                                                          │                                                                          │
+│ │      dist_info_path = PosixPath('/Users/gospellekia/DynamoGas/dynamosgas/src/dynamosgas.dist-info') │                                                                          │
+│ │                 env = {'PYTHONPATH': 'src'}                                                         │                                                                          │
+│ │             options = {}                                                                            │                                                                          │
+│ │             run_app = True                                                                          │                                                                          │
+│ │                self = <briefcase.commands.dev.DevCommand object at 0x105492be0>                     │                                                                          │
+│ │ update_dependencies = False                                                                         │                                                                          │
+│ ╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯                                                                          │
+│                                                                                                                                                                                  │
+│ /Users/gospellekia/DynamoGas/venv/lib/python3.9/site-packages/briefcase/commands/dev.py:94 in run_dev_app                                                                        │
+│                                                                                                                                                                                  │
+│    91 │   │   │   │   check=True,                                                             ╭────────────────────────────── locals ───────────────────────────────╮            │
+│    92 │   │   │   )                                                                           │     app = <com.dynamogroup.dynamosgas v0.0.1 AppConfig>             │            │
+│    93 │   │   except subprocess.CalledProcessError as e:                                      │     env = {'PYTHONPATH': 'src'}                                     │            │
+│ ❱  94 │   │   │   raise BriefcaseCommandError(                                                │ options = {}                                                        │            │
+│    95 │   │   │   │   f"Unable to start application '{app.app_name}'"                         │    self = <briefcase.commands.dev.DevCommand object at 0x105492be0> │            │
+│    96 │   │   │   ) from e                                                                    ╰─────────────────────────────────────────────────────────────────────╯            │
+│    97                                                                                                                                                                            │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+BriefcaseCommandError: Unable to start application 'dynamosgas'
