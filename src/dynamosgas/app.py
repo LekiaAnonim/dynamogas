@@ -37,9 +37,12 @@ class DynamoGas(toga.App):
         print_apply_button_color = '#2155cd'  # '#eb5353'
         button_1_font_size = 9
         font_family = 'system'
-
-        desktop_path = os.path.expanduser("~/Desktop")
-        self.database_path = str(desktop_path)+'/DataBase.csv'
+        if platform.system() == 'Windows':
+            desktop_path = os.path.join(os.path.join(os.environ['USERPROFILE']),'Desktop')
+            self.database_path = str(desktop_path)+'\DataBase.csv'
+        if platform.system()=='Darwin':
+            desktop_path = os.path.expanduser("~/Desktop")
+            self.database_path = str(desktop_path)+'/DataBase.csv'
 
         # Create Name output box
         name_box = toga.Box(style=Pack(direction=COLUMN))
